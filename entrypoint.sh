@@ -21,11 +21,11 @@ fi
 
 # 3. Apply standard settings and connect
 warp-cli --accept-tos mode proxy
-warp-cli --accept-tos proxy port 40000
+warp-cli --accept-tos proxy port 40001
 warp-cli --accept-tos connect
 
 # 4. Start the port forwarder
-socat TCP-LISTEN:40000,fork TCP:localhost:40000
+socat TCP-LISTEN:40000,fork TCP:localhost:40001
 ) &
 
 exec warp-svc
